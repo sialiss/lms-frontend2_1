@@ -39,7 +39,7 @@ function updateVisitCount() {
     document.getElementById("visitCount").textContent = localStorage.visitCount;
 }
 
-// Проверяем, была ли установлена запись о посещении при загрузке страницы и есть ли сохраненное имя
+// Проверка была ли установлена запись о посещении при загрузке страницы и есть ли сохраненное имя
 window.onload = function () {
     const savedUsername = getCookie("username");
     if (savedUsername) {
