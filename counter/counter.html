@@ -6,29 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grid</title>
+    <title>Количество посещений</title>
 
     <!-- импорт css -->
     <link href="../normalize.css" rel="stylesheet" type="text/css">
-    <link href="grid-style.css" rel="stylesheet" type="text/css">
-    <link href="media700.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- импорт js -->
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <p>Site name</p>
-        </header>
-        <nav>
-            <p>Menu</p>
-        </nav>
-        <main>
-            <p>Main</p>
-        </main>
-        <footer>
-            <p>Contacts</p>
-        </footer>
-    </div>
+    <header class="flex">
+        <a href="../main/index.html">Тестирование</a>
+    </header>
+    <main class="wrapper">
+        <h1>Количество посещений</h1>
+        <div>
+            <label for="GET-name">Введите своё имя:</label>
+            <input type="text" id="usernameInput">
+            <button id="save_username">Сохранить</button>
+        </div>
+        <div>
+            <p id="savedUsername"></p>
+            <p>Вы посетили эту страницу <span id="visitCount">0</span> раз(а).</p>
+        </div>
+    </main>
 </body>
 
 </html>
