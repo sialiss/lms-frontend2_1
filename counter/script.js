@@ -25,12 +25,29 @@ function getCookie(name) {
     return null;
 }
 
-// Проверяем, есть ли сохраненное имя при загрузке страницы
-window.onload = function() {
+// Напишите скрипт, который будет отслеживать,
+// сколько раз пользователь посетил Вашу веб - страницу.
+// Используйте localStorage для хранения этой информации и отображайте количество посещений на странице.
+
+// Функция для увеличения счетчика посещений и обновления на странице
+function updateVisitCount() {
+    if (localStorage.visitCount) {
+        localStorage.visitCount = Number(localStorage.visitCount) + 1;
+    } else {
+        localStorage.visitCount = 1;
+    }
+    document.getElementById("visitCount").textContent = localStorage.visitCount;
+}
+
+// Проверяем, была ли установлена запись о посещении при загрузке страницы и есть ли сохраненное имя
+window.onload = function () {
     const savedUsername = getCookie("username");
     if (savedUsername) {
         document.getElementById("savedUsername").innerText = "Привет, " + savedUsername + "!";
     }
+
+    if (!localStorage.visitCount) {
+        localStorage.visitCount = 0;
+    }
+    updateVisitCount();
 };
-
-
