@@ -31,16 +31,26 @@ print_group(people_container, second_group)
 // Из двух полученных в результате фильтрации массивов необходимо сформировать один массив
 // и вывести сообщение о том, сколько всего студентов набрали от 80 до 100 баллов.
 
-// function check_success(group) {
-//     const successed = group.filter()
-//     return successed
-// }
-
-// const successed = first_group.filter().concat(second_group.filter())
-
 // Затем вывести, например, в модальных окнах фамилии отобранных студентов и рядом
 // указать количество набранных этим студентом баллов.В завершение вывести сообщение
 // «Средний балл отобранных на работу студентов: (указать результат)».
 
-// Подсказка: при выполнении задания пригодятся ряд известных вам методов работы с объектом Array,
-// например: filter(), concat(), reduce(), forEach(), join().
+const btn_check = document.getElementById("btn_check")
+btn_check.addEventListener("click", show_results)
+
+function check_success(group) {
+    const successed = group.filter((student) => student[1] >= 80)
+    return successed
+}
+
+function show_results() {
+    const first_group_successed = check_success(first_group)
+    const second_group_successed = check_success(second_group)
+    alert("Отобрано студентов в первой группе: " + first_group_successed.length +
+        "\nОтобрано студентов во второй группе: " + second_group_successed.length)
+    const all_successed = first_group_successed.concat(second_group_successed)
+    alert("Прошедшие студенты:\n" + all_successed.join("\n"))
+    const initialValue = 0;
+    alert("Средний балл отобранных на работу студентов: " + Math.round(all_successed.reduce(
+        (accumulator, currentValue) => accumulator + currentValue[1], initialValue)/all_successed.length))
+}
