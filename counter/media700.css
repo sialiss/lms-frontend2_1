@@ -1,0 +1,11 @@
+@media screen and (max-width: 700px) {
+    .wrapper {
+    grid-template-areas:
+            "head"
+            "nav"
+            "main"
+            "foot";
+        grid-template-rows: 1fr 3fr 7fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}

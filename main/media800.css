@@ -1,0 +1,15 @@
+@media screen and (max-width: 800px) {
+    header,
+    .main {
+        flex-direction: column;
+    }
+
+    header a,
+    .main div {
+        padding: 5px 0;
+    }
+
+    img {
+        min-width: 200px;
+    }
+}
